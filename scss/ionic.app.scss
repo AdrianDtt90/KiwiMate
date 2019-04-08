@@ -1,0 +1,344 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// change default color
+$balanced:                        #00b45d !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../www/lib/ionic/scss/ionic";
+
+// common style
+a {
+  color: inherit;
+  text-decoration: none;
+}
+// common class
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.rlt {
+  position: relative;
+}
+
+.cf {
+  clear: both;
+}
+
+.no-border {
+  border: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+
+  .col-33 {
+    padding: 5px;
+  }
+}
+
+// side menu
+.menu-left {
+  img.profile-picture {
+    width: 7em;
+    height: 7em;
+    margin-top: 0.75em;
+  }
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-hint {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// login page
+.logo {
+  margin: 20px auto 0;
+  padding: 0.25em 0.5em;
+  width: 1.5em;
+  border-radius: 10%;
+  font-size: 3em;
+}
+
+.login-bg {
+  background: url("../img/4.jpg") no-repeat center;
+  background-size: 100% 100%;
+
+  .scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-content {
+      min-width: 86%;
+
+      .light-bg {
+
+        // keep only bottom border
+        .item-input {
+          margin: 0;
+          padding-left: 0;
+          border: none;
+          border-bottom: 1px solid #DDD;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Home page
+.grid-icon {
+  margin: 0.5em auto 0;
+  padding: 0.5em 0;
+  display: block;
+  width: 2em;
+  text-align: center;
+  font-size: 2em;
+}
+
+.place-bg {;
+  background: url("../img/new_york.jpg") no-repeat;
+  background-size: 100% auto;
+  padding: 4em 0;
+}
+
+// Chat detail screen
+.chat-detail {
+  img.profile-picture {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    &.left {
+      left: 10px;
+    }
+    &.right {
+      right: 10px;
+    }
+  }
+
+  .ion-email {
+    float: right;
+    font-size: 32px;
+    vertical-align: middle;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .message-detail {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .bar.item-input-inset {
+    .item-input-wrapper {
+      input {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .message-wrapper {
+    position: relative;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  .chat-bubble {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    margin: 10px;
+    max-width: 80%;
+
+    .message-time {
+      font-size: 0.7em;
+      display: block;
+    }
+
+    &:before {
+      content: "\00a0";
+      display: block;
+      height: 16px;
+      width: 9px;
+      position: absolute;
+      bottom: -7.5px;
+    }
+
+    &.left {
+      background-color: #e6e5eb;
+      float: left;
+      margin-left: 55px;
+
+      &:before {
+        background-color: #e6e5eb;
+        left: 10px;
+        -webkit-transform: rotate(70deg) skew(5deg);
+      }
+    }
+    &.right {
+      background-color: $balanced;
+      color: #fff;
+      float: right;
+      margin-right: 55px;
+
+      &:before {
+        background-color: $balanced;
+        right: 10px;
+        -webkit-transform: rotate(118deg) skew(-5deg);
+      }
+
+      a.autolinker {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .message-time {
+        text-align: right;
+      }
+    }
+  }
+
+  .bar-footer {
+    height: auto;
+    overflow: visible !important;
+
+    .item-input-inset {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    textarea {
+      resize: none;
+      height: 1.5em;
+      width: 100%;
+      background: none;
+    }
+
+    .footer-btn-wrap {
+      align-self: flex-end;
+
+      .button-icon:before {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+
+// Show nearby places
+#map {
+  width: 100%;
+  min-height: 40%;
+}
+
+.nearby-list {
+  .item-content {
+    padding-right: 5px;
+  }
+
+  .label {
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+}
+
+// Weather page
+.weather-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 40%;
+  background-size: 100% 100%;
+
+  .primary {
+    font-size: 3em;
+  }
+
+  .secondary {
+    font-size: 1.5em;
+  }
+
+  .text-hint {
+    color: $light;
+  }
+}
+
+// Gallery page
+.gallery-bg {
+  height: 40%;
+  padding: 0;
+  background-size: 100% 100%;
+
+  .align-bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .camera-button {
+    font-size: 4em;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+  h4, h3 {
+    margin: 0;
+  }
+}
+
+
+// List of friends
+.list-friends {
+  .circle {
+    width: 80%;
+  }
+}

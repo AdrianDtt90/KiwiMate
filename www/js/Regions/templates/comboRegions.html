@@ -1,0 +1,3 @@
+<select ng-init="init()" ng-model="regionCombo" ng-change="changeRegion()">
+	<option ng-repeat="region in regions" ng-selected="region.city_id_user" value="{{region.id}}">{{region.name}} ({{region.region}})</option>
+</select><i class="ok ion-checkmark-circled" ng-if="regionChange" />

@@ -1,0 +1,32 @@
+<ion-view view-title="Trabajos">
+  <ion-content ng-controller="SearchJobsCtrl">
+    <button class="button button-full button-positive icon-right ion-plus-round" ng-click="addNewJob()">
+      Agregar nuevo trabajo
+    </button>
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" ng-model="search.inputSearch" placeholder="Ingrese un trabajo...">
+      </label>
+      <button class="button button-small" ng-click="searchEvent()">
+        Buscar
+      </button>
+    </div>
+
+    <ion-list>
+      <h5 ng-if="jobs.length == 0">No se encontraron trabajos.</h5>
+      <ion-item class="item item-thumbnail-left job" ng-repeat="job in jobs" 
+      type="item-text-wrap" data-id="{{job.id}}">
+        <img class="image" ng-src="{{job.image != '' ? job.image : 'img/Kiwi-Logo-BW.png'}}">
+        <h2>{{job.title}}</h2>
+        <h4>{{job.type}}</h4>
+        <p>{{job.content}}</p>
+        <h6 class="float-left">Contacto: {{job.contact}}</h6>
+        <h5 class="float-right fecha">{{job.date}}</h5>
+        <i class="btnDelete ion-close-round" ng-click="deleteJob($event)" ng-if="job.user_id == user.userID"></i>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="jobs.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

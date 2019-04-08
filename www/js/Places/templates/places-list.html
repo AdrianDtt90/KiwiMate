@@ -1,0 +1,39 @@
+<ion-view view-title="Lugares" class="places" ng-init="init()">
+  <ion-content>
+
+    <div id="map" data-tap-disabled="true"></div>
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" ng-model="search.inputSearch" placeholder="Ingrese un lugar...">
+      </label>
+      <button class="button button-small" ng-click="searchEvent()">
+        Buscar
+      </button>
+    </div>
+
+    <ion-list class="nearby-list">
+      
+      <ion-item class="item-remove-animate item-thumbnail-left"
+                type="item-text-wrap"
+                ng-repeat="place in places" ng-click="showPlace({{place.id}})">
+        <img ng-src="{{ place.thumb }}">
+        <div>
+          <h2>{{ place.name }}</h2>
+          <p class="text-hint">
+            <span class="label balanced-bg light">{{ place.rate }}</span>
+            <span>{{ place.type }}</span>
+            <span>{{ place.distance }}</span>
+          </p>
+          <p>
+            <i class="ion-ios-location assertive"></i>
+            {{ place.address }}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="places.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

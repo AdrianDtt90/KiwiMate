@@ -1,0 +1,16 @@
+<ion-view view-title="Notificaciones">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="notification in notifications" 
+      type="item-text-wrap" href="{{notification.href}}{{notification.entity_id}}" ng-class="notification.viewed === 'Y' ? 'notify-read' : ''" ng-click="readNotification($event)" data-id="{{notification.id}}">
+          <img ng-src="{{notification.image_notif}}">
+          <h2  ng-bind-html="notification.text">{{notification.text}}</h2>
+          <p>{{notification.date}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="notifications.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

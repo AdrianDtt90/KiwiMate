@@ -1,0 +1,19 @@
+<div class="list card">
+
+  <div class="item item-avatar">
+    <img src="mcfly.jpg">
+    <h2>Marty McFly</h2>
+    <p>November 05, 1955</p>
+  </div>
+
+ <div class="button-bar">
+    <button class="button icon-left ion-camera" ng-click="loadImage()">Sacar Foto</button>
+    <button class="button icon-left ion-share" ng-click="uploadImage()" ng-disabled="image === null">Publicar</button>
+  </div>
+
+  <div class="item item-body">
+    <input type="text" placeholder="Contate algo...">
+    <img ng-src="{{pathForImage(image)}}" class="full-image">
+  </div>
+
+</div>

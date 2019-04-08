@@ -1,0 +1,50 @@
+<!--
+  This template loads for the 'weather' state (app.js)
+  days is a $scope variable in WeatherCtrl (controller.js)
+  The WeatherCtrl pulls data from Weather serivce (service.js)
+  The Weather service returns array of days data
+-->
+<ion-view view-title="Weather">
+  <ion-content>
+    <div class="text-center place-bg weather-bg light">
+      <div class="padding">
+        <p class="secondary">New York, USA</p>
+
+        <p class="primary">
+          {{ today.currentTemp }}
+          <i class="wi wi-celsius"></i>
+        </p>
+
+        <p class="secondary">
+          <!-- Change weather icon here -->
+          <i class="wi wi-night-{{  today.status.toLowerCase() }}"></i>
+          {{ today.status }}
+        </p>
+
+        <p class="text-hint light">
+          Feels Like
+          {{ today.feelLike }}<sup>o</sup>
+          Wind
+          {{ today.wind.speed }}km/h
+        </p>
+      </div>
+    </div>
+
+    <ion-list class="">
+      <ion-item class="item-icon-left" ng-repeat="day in days">
+        <i class="icon wi wi-{{ day.status.toLowerCase() }}"></i>
+
+        <div class="padding-left">
+          <span>{{ day.weekDay }}</span>
+          <span class="pull-right">
+            {{ day.minTemp }}
+            <sup>o</sup>
+            -
+            {{ day.maxTemp }}
+            <sup>o</sup>
+          </span>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

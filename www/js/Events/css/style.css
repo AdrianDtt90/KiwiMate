@@ -1,0 +1,22 @@
+.event .btnDelete {
+	position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.event .image {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.event .fecha {
+	position: absolute;
+	bottom: 8px;
+	right: 15px;
+}
+
+.event .dateEvent {
+	position: absolute;
+    top: 5px;
+    right: 29px;
+}

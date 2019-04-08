@@ -1,0 +1,84 @@
+<!--
+  This template loads for the 'ticket' state (app.js)
+  Book a flight ticket screen
+  depDate, returnDate, aldult, children, infants are $scope variables in TicketCtrl (controller.js)
+-->
+<ion-view view-title="Flight booking">
+  <ion-content>
+    <ion-list>
+
+      <ion-item class="item-input item-select">
+        <div class="input-label">
+          From
+        </div>
+        <select>
+          <option>Seoul</option>
+          <option selected>Tokyo</option>
+          <option>Hanoi</option>
+        </select>
+      </ion-item>
+
+      <ion-item class="item-input item-select">
+        <div class="input-label">
+          To
+        </div>
+        <select>
+          <option>Seoul</option>
+          <option selected>New York</option>
+          <option>Hanoi</option>
+        </select>
+      </ion-item>
+
+      <ion-item class="item-input">
+        <div class="input-label">
+          Departure date
+        </div>
+        <input type="date" ng-model="depDate">
+      </ion-item>
+
+      <ion-item class="item-input">
+        <div class="input-label">
+          Return date
+        </div>
+        <input type="date" ng-model="returnDate">
+      </ion-item>
+
+      <ion-item class="item-toggle">
+        Return
+        <label class="toggle toggle-assertive">
+          <input type="checkbox" ng-model="return">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </ion-item>
+
+      <ion-item class="item-input">
+        <div class="input-label">
+          Aldults
+        </div>
+        <input type="number" ng-model="aldult">
+      </ion-item>
+
+      <ion-item class="item-input">
+        <div class="input-label">
+          Children
+        </div>
+        <input type="number" ng-model="children">
+      </ion-item>
+
+      <ion-item class="item-input">
+        <div class="input-label">
+          Infants
+        </div>
+        <input type="number"  ng-model="infants">
+      </ion-item>
+
+    </ion-list>
+
+    <div class="padding">
+      <button class="button button-balanced button-block">Continue</button>
+    </div>
+
+  </ion-content>
+</ion-view>

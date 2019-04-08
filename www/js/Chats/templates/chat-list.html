@@ -1,0 +1,21 @@
+<ion-view view-title="KiwiMates">
+  <ion-content class="stable-bg" ng-init="init()">
+  	<label class="item item-input item-select">
+    <div class="input-label">
+      Filtrar
+    </div>
+    <select ng-model="cities" ng-options="region.name+ ' - ' +region.region+ ' (Cant.:' + region.total_users + ')' for region in regions">
+	</select>
+  </label>
+    <div class="row flex-wrap list-friends padding-top">
+      <h5 ng-cloak ng-if="filtered.length == 0">No se encontraron KiwiMates en {{cities.name}} ({{cities.region}})</h5>
+      <div ng-if="filtered.length > 0" class="col-33 text-center" ng-repeat="chat in chats | filter : cities.name as filtered">
+        <a href="#/profile-chat/{{chat.id}}">
+          <img src="{{ chat.image }}" alt="" class="circle"/>
+          <h5 class="dark">{{ chat.name }}</h5>
+          <h6 class="dark">{{ chat.city }} ({{ chat.region }})</h6>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

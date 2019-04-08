@@ -1,0 +1,16 @@
+.btnDelete {
+	position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.job .image {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.job .fecha {
+	position: absolute;
+	bottom: 8px;
+	right: 15px;
+}

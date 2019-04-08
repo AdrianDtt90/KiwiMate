@@ -1,0 +1,47 @@
+<ion-view view-title="Post">
+  <ion-content ng-init="init()">
+
+	<div class="list-post">
+		<div class="item item-avatar">
+			<img ng-src="{{post.imageProfile}}">
+			<a href="#/profile-chat/{{user_id}}">
+				<h2>{{post.username}}</h2>
+			</a>
+			<p>{{post.date}}</p>
+		</div>
+
+		<div class="item item-body item-post">
+			<p>
+				{{post.content}}
+			</p>
+			<img class="full-image" ng-if="post.imagePost" src="{{post.imagePost}}">
+			<p>
+				<kiwilikes entity="'post'" entity-id="post.id" owner-id="user_id"></kiwilikes>
+			</p>
+		</div>
+	</div>
+
+	<div class="list">
+
+		<div class="item item-avatar" ng-repeat="comment in commentsPost" >
+			<img ng-src="{{comment.image}}">
+			<a href="#/profile-chat/{{comment.user_id}}">
+				<h2>{{comment.name}}</h2>
+			</a>
+			<p>{{comment.comment}}</p>
+		</div>
+
+	</div>
+
+
+	<div class="item item-button-right">
+		<label class="item item-input">
+			<textarea ng-model="post.comment" placeholder="Dejá tu comentario..."></textarea>
+		</label>
+		<button class="sendComment button button-balanced" ng-click="insertComment()">
+			<i class="icon ion-android-send"></i>
+		</button>
+	</div>
+    
+  </ion-content>
+</ion-view>

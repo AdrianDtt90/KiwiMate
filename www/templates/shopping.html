@@ -1,0 +1,35 @@
+<!--
+  This template loads for the 'shopping' state (app.js)
+  items is a $scope variable in ShoppingCtrl (controller.js)
+  The ShoppingCtrl pulls data from Items service (service.js)
+  The Items service returns array  of places data
+-->
+<ion-view view-title="Shopping" ng-init="init()">
+  <ion-content>
+
+    <ion-list class="nearby-list">
+
+      <ion-item class="item-remove-animate item-thumbnail-left"
+                type="item-text-wrap"
+                ng-repeat="place in places">
+        <img ng-src="{{ place.thumb }}">
+
+        <div>
+          <h2>{{ place.name }}</h2>
+
+          <p class="text-hint">
+            <span class="label balanced-bg light">{{ place.rate }}</span>
+            <span>{{ place.distance }}</span>
+          </p>
+
+          <p>
+            <i class="ion-ios-location assertive"></i>
+            {{ place.address }}
+          </p>
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>

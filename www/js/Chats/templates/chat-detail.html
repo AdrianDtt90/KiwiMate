@@ -1,0 +1,62 @@
+<ion-view view-title="{{chat.name}}" class="chat-detail">
+  <ion-content class="padding" delegate-handle="mainScroll" ng-init="init()">
+    <div ng-repeat="message in chat.messages" class="message-wrapper rlt">
+
+      <div ng-if="message.type == 'received'">
+
+        <img class="profile-picture left circle" src="{{ chat.image }}" />
+
+        <div class="chat-bubble left">
+
+          <div class="message">
+            {{ message.text | nl2br }}
+            <img src="{{ message.image }}" class="block" ng-if="message.image" alt=""/>
+          </div>
+
+          <div class="message-detail">
+            <span class="message-time">{{ message.time }}</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div ng-if="message.type == 'sent'">
+
+        <img class="profile-picture right circle" src="{{image}}"  />
+
+        <div class="chat-bubble right">
+
+          <div class="message" ng-bind-html="message.text | nl2br">
+          </div>
+
+          <div class="message-detail">
+            <span class="message-time">{{ message.time }}</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="cf"></div>
+
+    </div>
+    <p class="text-center">Cada 15 seg. se actualizará su conversación</p>
+  </ion-content>
+
+  <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+    <ion-footer-bar class="bar-stable message-footer">
+      <!--<div class="footer-btn-wrap">
+        <button class="button button-icon icon ion-android-attach"></button>
+      </div>-->
+      <label class="item-input-wrapper">
+        <textarea ng-model="input.message" value="" placeholder="Enviar un mensaje a {{chat.name}}..."
+                  required minlength="1" maxlength="1500" msd-elastic></textarea>
+      </label>
+      <div class="footer-btn-wrap">
+        <button class="button button-icon icon ion-android-send footer-btn" type="submit"
+                ng-disabled="!input.message || input.message === ''">
+        </button>
+      </div>
+    </ion-footer-bar>
+  </form>
+</ion-view>

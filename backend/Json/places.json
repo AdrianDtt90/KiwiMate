@@ -1,0 +1,86 @@
+  {
+    "places": [{
+      "id" : 1,
+      "name" : "Sumo BBQ",
+      "thumb" : "img/thumb/r1_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Loseby",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 8.1,
+      "x" : -36.8489386,
+      "y" : 174.7620891,
+      "letter" : "E"
+    },
+    {
+      "id" : 2,
+      "name" : "Hanoi hotel",
+      "thumb" : "img/thumb/r2_thumb.jpg",
+      "type" : "Hotel",
+      "address" : "No 2, Hoang Sa",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 9.1,
+      "x" : -36.5489386,
+      "y" : 174.2620891,
+      "letter" : "C"
+    },
+    {
+      "id" : 3,
+      "name" : "Chipa Chipa BBQ",
+      "thumb" : "img/thumb/r3_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Truong Sa",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 7.5,
+      "x" : -36.3589386,
+      "y" : 174.7820891,
+      "letter" : "A"
+    },
+    {
+      "id" : 4,
+      "name" : "Sumo BBQ",
+      "thumb" : "img/thumb/r4_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Loseby",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 8.1,
+      "x" : -36.2389386,
+      "y" : 174.8720891,
+      "letter" : "A"
+    },
+    {
+      "id" : 5,
+      "name" : "Sumo BBQ",
+      "thumb" : "img/thumb/r5_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Loseby",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 8.1,
+      "x" : -36.9889386,
+      "y" : 174.3420891,
+      "letter" : "A"
+    },
+    {
+      "id" : 6,
+      "name" : "Sumo BBQ",
+      "thumb" : "img/thumb/r6_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Loseby",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 8.1,
+      "x" : -36.2689386,
+      "y" : 174.2820891,
+      "letter" : "A"
+    },
+    {
+      "id" : 7,
+      "name" : "Sumo BBQ",
+      "thumb" : "img/thumb/r7_thumb.jpg",
+      "type" : "Restaurant",
+      "address" : "No 2, Loseby",
+      "content" : "texto mucho texto texto mucho texto texto mucho textotexto mucho textotextotexto mucho texto texto mucho texto",
+      "rate" : 8.1,
+      "x" : -36.3289386,
+      "y" : 174.9920891,
+      "letter" : "A"
+    }]
+}

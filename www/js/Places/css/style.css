@@ -1,0 +1,18 @@
+.places .firstHeading {
+	font-size: 20px;
+}
+
+.places .secondHeading {
+	font-size: 14px;
+}
+
+.places .bodyContent {
+	font-size: 12px;
+}
+
+.places .image-place {
+	max-width: 80px;
+	max-height: 80px;
+	float: left;
+	margin-right: 5px;
+}

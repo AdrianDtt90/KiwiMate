@@ -1,0 +1,34 @@
+<!--
+  This template loads for the 'nearby' state (app.js)
+  Places is a $scope variable in NearbyCtrl (controller.js)
+  The NearbyCtrl pulls data from Places service (service.js)
+  The Places service returns array  of places data
+-->
+<ion-view view-title="New york" ng-init="init()">
+  <ion-content>
+
+    <div id="map" data-tap-disabled="true"></div>
+
+    <ion-list class="nearby-list">
+      
+      <ion-item class="item-remove-animate item-thumbnail-left"
+                type="item-text-wrap"
+                ng-repeat="place in places">
+        <img ng-src="{{ place.thumb }}">
+        <div>
+          <h2>{{ place.name }}</h2>
+          <p class="text-hint">
+            <span class="label balanced-bg light">{{ place.rate }}</span>
+            <span>{{ place.type }}</span>
+            <span>{{ place.distance }}</span>
+          </p>
+          <p>
+            <i class="ion-ios-location assertive"></i>
+            {{ place.address }}
+          </p>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

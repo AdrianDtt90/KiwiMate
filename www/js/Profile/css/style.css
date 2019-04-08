@@ -1,0 +1,38 @@
+.profile {
+	text-align: center;
+}
+
+.profile a {
+    color: #387ef5 !important;
+}
+
+.profile textarea {
+	height: 120px;
+}
+
+.profile .is-wiki {
+  filter: grayscale(0%);
+  color: rgb(159, 197, 59) !important;
+}
+
+.profile kiwimate {
+	float: left;
+}
+
+.profile .amount-kiwi {
+  position: relative;
+}
+
+.profile .amount-kiwi span {
+  left: 28px;
+  top: -8px;
+  width: 100px;
+  font-weight: bold;
+  color: rgb(159, 197, 59) !important;
+}
+
+.profile .amount-kiwi img {
+  width: 15px;
+  vertical-align:middle;
+  margin-top: -4px;
+}

@@ -1,0 +1,43 @@
+<ion-view view-title="Eventos">
+  <ion-content>
+    <button class="button button-full button-positive icon-right ion-plus-round" ng-click="addNewEvent()">
+      Agregar nuevo evento
+    </button>
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" ng-model="search.inputSearch" placeholder="Ingrese un evento...">
+      </label>
+      <button class="button button-small" ng-click="searchEvent()">
+        Buscar
+      </button>
+    </div>
+
+    <ion-list class="nearby-list">
+      <h5 ng-if="events.length == 0">No se encontraron eventos.</h5>
+      <ion-item class="item-remove-animate item-thumbnail-left event"
+                type="item-text-wrap"
+                ng-repeat="event in events" data-id="{{event.id}}">
+        <img class="image" ng-src="{{event.image != '' ? event.image : 'img/Kiwi-Logo-BW.png'}}">
+        <i class="btnDelete ion-close-round" ng-click="deleteEvent($event)" ng-if="event.user_id == user.userID"></i>
+
+        <div>
+          <h5 class="float-right dateEvent">Día del evento: {{event.date}}</h5>
+          <h2>{{ event.title }}</h2>
+          <p>
+            <i class="ion-ios-location assertive"></i>
+            {{ event.address }}
+          </p>
+
+          <p>
+            {{event.content}}
+          </p>
+          <h4>Contacto: <b>{{event.contact}}</b></h4>
+        </div>
+      </ion-item>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="events.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

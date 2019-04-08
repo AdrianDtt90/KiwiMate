@@ -1,0 +1,30 @@
+<ion-item class="item card" ng-repeat="post in posts" data-id="{{post.id}}">
+  <div class="list-post">
+    <div class="item item-avatar">
+      <img ng-src="{{post.imageProfile}}">
+      <a href="#/profile-chat/{{post.user_id}}">
+        <h2>{{post.username}}</h2>
+      </a>
+      <p>{{post.date}}</p>
+      <i class="btnDeletePost ion-close-round" ng-click="deletePost($event)" ng-if="post.user_id == user.userID"></i>
+    </div>
+
+    <div class="item item-body item-post">
+      <p>
+        {{post.content}}
+      </p>
+      <img class="full-image" ng-if="post.imagePost" src="{{post.imagePost}}">
+      <p>
+        <kiwilikes entity="'post'" entity-id="post.id" owner-id="post.user_id"></kiwilikes>
+        <a href="#/post/{{post.id}}">
+          <button class="button button-small button-balanced float-right post-detail">
+            Ver
+          </button>
+        </a>
+      </p>
+    </div>
+  </div>
+</ion-item>
+<button class="button button-block button-positive" ng-if="posts.length >= limit" ng-click="seeMore($event)">
+  Ver más...
+</button>

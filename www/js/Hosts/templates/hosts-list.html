@@ -1,0 +1,38 @@
+<ion-view view-title="Hospedaje">
+  <ion-content>
+    
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" ng-model="search.inputSearch" placeholder="Ingrese un hospedaje...">
+      </label>
+      <button class="button button-small" ng-click="searchEvent()">
+        Buscar
+      </button>
+    </div>
+
+    <ion-list>
+      <ion-item class="item card" ng-repeat="host in hosts">
+        <div class="item item-avatar">
+          <img ng-src="{{host.imageProfile}}">
+          <h2>{{host.title}} - <span class="currency">{{host.price | currency }}</span></h2>
+          <p>{{host.place}}</p>
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" src="{{host.imagesProduct}}">
+          <p>
+            {{host.content}}
+          </p>
+          <p>
+            <h4>Contacto: <b>{{host.contact}}</b></h4>
+            <!--<a href="#" class="subdued">{{host.likes}} Like</a>
+            <a href="#" class="subdued">{{host.coments}} Comments</a>-->
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="hosts.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

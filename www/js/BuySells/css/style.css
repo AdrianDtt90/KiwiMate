@@ -1,0 +1,16 @@
+.buysell .btnDelete {
+	position: absolute;
+    top: 12px;
+    right: 5px;
+}
+
+.buysell .image {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.buysell .fecha {
+	position: absolute;
+	bottom: 8px;
+	right: 15px;
+}

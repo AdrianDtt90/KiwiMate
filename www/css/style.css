@@ -1,0 +1,112 @@
+/* Empty. Add your own CSS if you like */
+
+.background-00b45d {
+  background-color: #00b45d;
+}
+
+.color-white {
+	color: #fff;
+}
+
+.login-content .img-logo-kiwi-mate {
+	max-width: 250px;
+}
+
+.login-content .facebook-sign-in {
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  color: #FFF !important;
+  background-color: #294886 !important;
+  border-color: #27447e !important; 
+}
+
+.home-bg {
+  background: url("../img/3.jpg") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.item-post {
+  padding-top: 0px !important;
+}
+
+.is-wiki {
+  filter: grayscale(0%);
+  color: rgb(159, 197, 59) !important;
+}
+
+.notify-read a {
+  background: #e0e0e0 !important;
+}
+
+.not-wiki {
+  filter: grayscale(100%);
+  color: #b7b5b5 !important;
+}
+
+.currency {
+  color: #1dbf1b;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.list-post .amount-kiwi {
+  position: relative;
+}
+
+.list-post .amount-kiwi span {
+  position: absolute;
+  left: 28px;
+  top: -8px;
+  width: 100px;
+  font-weight: bold;
+}
+
+.list-post .amount-kiwi img {
+  width: 24px;
+}
+
+.list-post .post-detail {
+  position: absolute;
+  right: 6px;
+}
+
+.button.sendComment {
+  height: 45px;
+  margin-top: 7px;
+}
+
+.img-responsive {
+  width: 75%;
+}
+
+.input-requided {
+  color: red;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btnDeletePost {
+    position: absolute;
+    top: 16px;
+    right: 14px;
+}
+
+.fuente {
+  font-size: 12px;
+}

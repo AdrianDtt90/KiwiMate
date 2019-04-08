@@ -1,0 +1,23 @@
+<!--
+  This template loads for the 'currency' state (app.js)
+  Currency convert
+-->
+<ion-view view-title="Convert currency">
+  <ion-content>
+    <ion-list>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-social-euro"></i>
+        <input type="number" ng-model="from" class="full-width"/>
+      </ion-item>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-social-usd"></i>
+        <!-- change your currency here-->
+        <input type="number" ng-value="from * 1.0966" class="full-width"/>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>

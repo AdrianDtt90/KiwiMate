@@ -1,0 +1,41 @@
+<ion-view view-title="Compra - Venta">
+  <ion-content ng-controller="SearchBuySellsCtrl">
+    <button class="button button-full button-positive icon-right ion-plus-round" ng-click="addNewBuySell()">
+      Agregar nueva compra/venta
+    </button>
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" ng-model="search.inputSearch" placeholder="Ingrese una compra/venta...">
+      </label>
+      <button class="button button-small" ng-click="searchEvent()">
+        Buscar
+      </button>
+    </div>
+    
+    <ion-list>
+      <h5 ng-if="buysells.length == 0">No se encontraron compras/ventas.</h5>
+      <ion-item class="item card buysell" ng-repeat="buysell in buysells" data-id="{{buysell.id}}">
+        <div class="item item-avatar">
+          <img class="image" ng-src="{{buysell.imageProfile != '' ? buysell.imageProfile : 'img/Kiwi-Logo-BW.png'}}">
+          <h2>{{buysell.title}} - <span class="currency">{{buysell.price | currency }}</span></h2>
+          <p>{{buysell.date}}</p>
+          <i class="btnDelete ion-close-round" ng-click="deleteBuySell($event)" ng-if="buysell.user_id == user.userID"></i>
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" ng-src="{{buysell.image != '' ? buysell.image : 'img/Kiwi-Logo-BW.png'}}">
+          <p>
+            {{buysell.content}}
+          </p>
+          <p>
+            <h4>Contacto: <b>{{buysell.contact}}</b></h4>
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <button class="button button-block button-positive" ng-if="buysells.length >= limit" ng-click="seeMore($event)">
+      Ver más...
+    </button>
+  </ion-content>
+</ion-view>

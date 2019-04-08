@@ -1,0 +1,81 @@
+<ion-view view-title="Perfil" class="profile">
+  <ion-content ng-init="init()">
+    <section class="padding-top">
+      <img class="circle" ng-src="{{profile.picture}}">
+      <h2>{{profile.name}}</h2>
+      <div class="amount-kiwi">
+      	<span>Kiwis recolectados: </span><img src="img/kiwi.png" class="is_kiwi" /><span> {{profile.amount_kiwis}}</span>
+      </div>
+      <p>{{profile.email}}</p>
+    </section>
+    <br>
+	<div class="list">
+		<label class="item item-input item-select">
+			<div class="input-label">
+				¿Donde estoy?
+			</div>
+			<regions></regions>
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Acerca de mi...</span>
+			<textarea ng-model="profile.about" ng-keyup="fAboutChange()" placeholder="Acerca de mi..."></textarea>
+		</label>
+		<button class="button button-full button-assertive float-right" ng-if="aboutChange" ng-click="updateAbout()">
+		  Aplicar cambio
+		</button>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Contacto</span>
+			<input ng-model="profile.contact" ng-keyup="fContactChange()" type="text" placeholder="Celular">
+		</label>
+		<button class="button button-full button-assertive float-right" ng-if="contactChange" ng-click="updateContact()">
+		  Aplicar cambio
+		</button>
+	</div>
+	<br>
+	<h3>Siguiendo</h3>
+	<div class="list">
+		<h5 ng-cloak ng-if="followers.length == 0">No sigue a ningún KiwiMates</h5>
+		<div ng-if="followers.length > 0" class="col-50 text-center">
+			<a href="#/profile-chat/{{follower.user_id}}" ng-repeat="follower in followers">
+				<img src="{{ follower.image }}" alt="" class="circle img-responsive"/>
+				<h5 class="dark">{{ follower.name }}</h5>
+				<h6 class="dark">{{ follower.city }} ({{ follower.region }})</h6>
+			</a>
+		</div>
+	</div>
+	<br>
+	<h3>Publicaciónes</h3>
+	<div class="list">
+		<h5 ng-cloak ng-if="posts.length == 0">No hay publicaciones</h5>
+		<ion-item class="item card" ng-repeat="post in posts">
+		  <div class="list-post">
+		    <div class="item item-avatar">
+		      <img ng-src="{{post.imageProfile}}">
+		      <a href="#/profile-chat/{{post.user_id}}">
+		        <h2>{{post.username}}</h2>
+		      </a>
+		      <p>{{post.date}}</p>
+		      <a href="#/post/{{post.id}}">
+		        <button class="button button-small button-balanced float-right post-detail">
+		          Ver
+		        </button>
+		      </a>
+		    </div>
+
+		    <div class="item item-body item-post">
+		      <p>
+		        {{post.content}}
+		      </p>
+		      <img class="full-image" ng-if="post.imagePost" src="{{post.imagePost}}">
+		      <p class="text-left">
+		        <kiwilikes entity="'post'" entity-id="post.id" owner-id="post.user_id"></kiwilikes>
+		      </p>
+		    </div>
+		  </div>
+		</ion-item>
+		<button class="button button-block button-positive" ng-if="posts.length >= limit" ng-click="seeMore($event)">
+		  Ver más...
+		</button>
+	</div>
+  </ion-content>
+</ion-view>

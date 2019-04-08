@@ -1,0 +1,19 @@
+<!--
+  This template loads for the 'friends' state (app.js)
+  friends is a $scope variable in FriendsCtrl (controller.js)
+  The FriendsCtrl pulls data from Friends service (service.js)
+  The Friends service returns array  of places data
+-->
+
+<ion-view view-title="People nearby">
+  <ion-content class="stable-bg">
+    <div class="row flex-wrap list-friends padding-top">
+      <div class="col-33 text-center" ng-repeat="friend in friends">
+        <a href="#/chats/0">
+          <img src="{{ friend.face }}" alt="" class="circle"/>
+          <h5 class="dark">{{ friend.name }}</h5>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy">
+
+    <title>- KiwiMate -</title>
+
+    <!-- weather font -->
+    <link href="css/weather-icons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- wikimate style -->
+    <link href="js/Profile/css/style.css" rel="stylesheet">
+    <link href="js/Places/css/style.css" rel="stylesheet">
+    <link href="js/Regions/css/style.css" rel="stylesheet">
+    <link href="js/Jobs/css/style.css" rel="stylesheet">
+    <link href="js/BuySells/css/style.css" rel="stylesheet">
+    <link href="js/Events/css/style.css" rel="stylesheet">
+
+    <!-- ionic gallery -->
+    <link href="lib/ionic-gallery/css/ion-gallery.css" rel="stylesheet">
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+  </head>
+  <body ng-app="starter">
+    <div id="fb-root"></div>
+
+    <ion-side-menus ng-cloak>
+
+      <!-- Center content -->
+      <ion-side-menu-content drag-content="true">
+        <ion-nav-bar class="bar-balanced" align-title="center">
+          <!-- Back button -->
+          <ion-nav-back-button>
+            Atras
+          </ion-nav-back-button>
+
+          <!-- Burger button -->
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+          </ion-nav-buttons>
+
+          <!-- Cart button -->
+          <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-home" ui-sref="home">
+            </button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <!-- Main view content -->
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
+      </ion-side-menu-content>
+
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+        <ion-content class="background-00b45d">
+
+          <!-- User profile -->
+          <div class="text-center" ng-controller="ProfileInfoCtrl">
+            <a ui-sref="user({userId: 0})">
+              <img class="profile-picture circle" menu-close="" src="{{user.picture}}">
+              <h4 class="color-white">{{user.name}}</h4>
+            </a>
+          </div>
+
+          <!-- Menu -->
+          <div class="list" menu-close="">
+          
+            <div class="item item-icon-left cursor-pointer" ui-sref="home">
+              <i class="icon ion-home"></i>
+              Home
+            </div>
+
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="notifications" ng-controller="notificationsListCtrl">
+              <i class="icon ion-radio-waves"></i>
+              Notificaciones
+              <span ng-if="amountNotifications > 0" class="badge badge-assertive">{{amountNotifications}}</span>
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="profile">
+              <i class="icon ion-happy-outline"></i>
+              Perfil
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="info">
+              <i class="icon ion-information"></i>
+              Info. Útil
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="chats">
+              <i class="icon ion-person-stalker"></i>
+              Gente que busca gente
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="my-chats">
+              <i class="icon ion-chatbubbles"></i>
+              Chats
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="places">
+              <i class="icon ion-map"></i>
+              Turisteando
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="jobs">
+              <i class="icon ion-hammer"></i>
+              Busco Trabajo
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="buysells">
+              <i class="icon ion-bag"></i>
+              Compra - Venta
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="hosts">
+              <i class="icon ion-home"></i>
+              Hospedaje
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="events">
+              <i class="icon ion-beer"></i>
+              Eventos NZ
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="dictionary">
+              <i class="icon ion-chatbubble-working"></i>
+              KiwiDictionary
+            </div>
+            <!--
+            <div class="item item-icon-left cursor-pointer" ui-sref="home">
+              <i class="icon ion-ios-home-outline"></i>
+              Home
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="nearby">
+              <i class="icon ion-ios-location-outline"></i>
+              Nearby
+            </div>
+
+            <div class="item item-icon-left cursor-pointer" ui-sref="chats">
+              <i class="icon ion-ios-email-outline"></i>
+              Message
+              <span class="badge badge-assertive">2</span>
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="ticket">
+              <i class="icon ion-android-plane"></i>
+              Flight booking
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="weather">
+              <i class="icon ion-ios-cloud-outline"></i>
+              Weather
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="gallery">
+              <i class="icon ion-images"></i>
+              Photos
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="friends">
+              <i class="icon ion-ios-people-outline"></i>
+              Friends
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="taxi">
+              <i class="icon ion-model-s"></i>
+              Taxi
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="shopping">
+              <i class="icon ion-bag"></i>
+              Shopping
+            </div>
+            <div class="item item-icon-left cursor-pointer" ui-sref="currency">
+              <i class="icon ion-card"></i>
+              Currency
+            </div>
+            -->
+            <div class="item item-icon-left cursor-pointer" ng-controller="LogoutCtrl" ng-click="showLogOutMenu()">
+              <i class="icon ion-log-out"></i>
+              Cerrar Sesion
+            </div>
+          </div>
+
+        </ion-content>
+
+      </ion-side-menu>
+
+    </ion-side-menus>
+
+
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- angular-nl2br js -->
+    <script src="lib/angular-nl2br/angular-nl2br.min.js"></script>
+
+    <!-- elastic js-->
+    <script src="lib/angular-elastic/elastic.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- google maps javascript -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
+
+    <!-- ionic gallery -->
+    <script src="lib/ionic-gallery/js/ion-gallery.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/factories.js"></script>
+
+    <!-- modules kiwimate -->
+    <script src="js/Regions/directives.js"></script>
+    <script src="js/Info/controllers.js"></script>
+    <script src="js/Info/services.js"></script>
+    <script src="js/Profile/controllers.js"></script>
+    <script src="js/Profile/services.js"></script>
+    <script src="js/Places/controllers.js"></script>
+    <script src="js/Places/services.js"></script>
+    <script src="js/Jobs/controllers.js"></script>
+    <script src="js/Jobs/services.js"></script>
+    <script src="js/BuySells/controllers.js"></script>
+    <script src="js/BuySells/services.js"></script>
+    <script src="js/Hosts/controllers.js"></script>
+    <script src="js/Hosts/services.js"></script>
+    <script src="js/Events/controllers.js"></script>
+    <script src="js/Events/services.js"></script>
+    <script src="js/Dictionary/controllers.js"></script>
+    <script src="js/Dictionary/services.js"></script>
+    <script src="js/KiwiLikes/directives.js"></script>
+    <script src="js/Publisher/directives.js"></script>
+    <script src="js/Publisher/controllers.js"></script>
+    <script src="js/Chats/controllers.js"></script>
+    <script src="js/Notifications/controllers.js"></script>
+    <script src="js/FormsMgmt/directives.js"></script>
+
+    <!-- Libs -->
+    <script src="lib/facebook-connect-plugin/index.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/cordova-plugin-inappbrowser/www/inappbrowser.js"></script>
+    
+  </body>
+</html>

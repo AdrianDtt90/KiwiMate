@@ -1,0 +1,25 @@
+<!--
+  This template loads for the 'gallery' state (app.js)
+  photos is a $scope variable in GalleryCtrl (controller.js)
+  The GalleryCtrl pulls data from Photos service (service.js)
+  The Places service returns array  of photos data
+-->
+<ion-view view-title="Photos">
+  <ion-content>
+    <div class="place-bg gallery-bg rlt">
+      <div class="align-bottom padding">
+        <h4 class="light">New York</h4>
+        <h3 class="light">USA</h3>
+      </div>
+
+      <!-- Open the phone camera here -->
+      <a href="" class="light camera-button">
+        <i class="ion-ios-camera-outline"></i>
+      </a>
+
+    </div>
+
+    <ion-gallery ion-gallery-items="photos"></ion-gallery>
+
+  </ion-content>
+</ion-view>

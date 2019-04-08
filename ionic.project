@@ -1,0 +1,12 @@
+{
+  "name": "kiwimate",
+  "app_id": "1275764792516077",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

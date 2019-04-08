@@ -1,0 +1,13 @@
+<ion-view view-title="KiwiMates" class="my-chat-list">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chatItems" 
+      type="item-text-wrap" href="#/chats/{{chat.user_id}}">
+        <img ng-src="{{chat.image}}">
+        <h2 class="dark">{{ chat.username }} - <span class="dark">{{ chat.city }}</span></h2>
+        <p>Último mensaje: "{{ chat.lastText }}" - {{ chat.date }}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
